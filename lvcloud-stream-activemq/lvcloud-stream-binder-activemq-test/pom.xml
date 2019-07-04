@@ -24,8 +24,8 @@
 	     </dependency>
 	     <dependency>
 	        <groupId>com.lv.cloud</groupId>
-	        <artifactId>lvcloud-stream-binder-activemq</artifactId>
-	        <!--<version>0.0.1-SNAPSHOT</version>-->
+	        <artifactId>lvcloud-stream-starter-activemq</artifactId>
+	        <version>0.0.1-SNAPSHOT</version>
 	    </dependency>
 
 	    <dependency>
