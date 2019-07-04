@@ -1,0 +1,2 @@
+activemq:\
+com.lv.cloud.stream.binder.activemq.config.ActivemqBinderConfiguration
