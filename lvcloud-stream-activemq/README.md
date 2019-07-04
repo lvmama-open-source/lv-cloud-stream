@@ -1,7 +1,7 @@
 # lvmm-stream-rocketmq
 
 #### 项目介绍
-spring cloud stream 子项目rocketmq binder
+spring cloud stream 子项目activemq binder
 
 #### 软件架构
 软件架构说明
@@ -9,28 +9,20 @@ spring cloud stream 子项目rocketmq binder
 
 #### 安装教程
 
-1. 依赖lvcloud-stream-starter-rocketmq
+1. 依赖lvcloud-stream-starter-activemq
 <dependency>
      <groupId>com.lv.cloud</groupId>
-     <artifactId>lvcloud-stream-starter-rocketmq</artifactId>
+     <artifactId>lvcloud-stream-starter-activemq</artifactId>
      <version>0.0.1-SNAPSHOT</version>
 </dependency>
 2. 在application.properties中添加如下配置
-spring.cloud.stream.binders.rocketmq.type=rocketmq
-lvcloud.stream.rocketmq.binder.namesrvAddr=10.113.9.17:9876;10.113.9.16:9876;10.113.9.19:9876
-lvcloud.stream.rocketmq.binder.autoCreateTopics=true
-lvcloud.stream.rocketmq.binder.producerGroup=LvmmProducer
-lvcloud.stream.rocketmq.binder.topics.order_create.delay=3
-lvcloud.stream.rocketmq.binder.topics.order_create.tags=test1,test111
-lvcloud.stream.rocketmq.binder.topics.order_create.tagsInfo.test1.delay=5
+spring.cloud.stream.binders.activemq.type=activemq
+lvcloud.stream.activemq.binder.broker=tcp://10.200.2.72:61616?wireFormat.maxInactivityDuration=0
 
-spring.cloud.stream.default-binder=rocketmq
-
-spring.cloud.stream.bindings.ORDER.group=order_group
-spring.cloud.stream.bindings.ORDER.destination=order_create:test1
-lvcloud.stream.rocketmq.bindings.ORDER.consumer.consumeThreadMin=4
-lvcloud.stream.rocketmq.bindings.ORDER.consumer.consumeThreadMax=16
-
+spring.cloud.stream.default-binder=activemq
+spring.cloud.stream.bindings.input.group=order_group
+spring.cloud.stream.bindings.input.destination=order_create_test1
+lvcloud.stream.activemq.bindings.input.consumer.concurrency=1-3
 3. xxxx
 
 #### 使用说明
