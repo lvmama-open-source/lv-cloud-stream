@@ -13,7 +13,7 @@ spring cloud stream 子项目rocketmq binder
 <dependency>
      <groupId>com.lv.cloud</groupId>
      <artifactId>lvcloud-stream-starter-rocketmq</artifactId>
-     <version>0.0.1-SNAPSHOT</version>
+     <version>0.0.1</version>
 </dependency>
 2. 在application.properties中添加如下配置
 spring.cloud.stream.binders.rocketmq.type=rocketmq
