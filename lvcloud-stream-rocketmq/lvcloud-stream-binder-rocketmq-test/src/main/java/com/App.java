@@ -2,14 +2,9 @@ package com;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.stream.annotation.EnableBinding;
-import org.springframework.cloud.stream.annotation.Input;
-import org.springframework.cloud.stream.annotation.Output;
-import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.cloud.stream.binding.BinderAwareChannelResolver;
-import org.springframework.cloud.stream.reactive.FluxSender;
 import org.springframework.context.annotation.Bean;
 import org.springframework.expression.Expression;
 import org.springframework.expression.spel.standard.SpelExpressionParser;
@@ -18,11 +13,7 @@ import org.springframework.integration.channel.DirectChannel;
 import org.springframework.integration.router.ExpressionEvaluatingRouter;
 import org.springframework.messaging.MessageChannel;
 
-import reactor.core.publisher.Flux;
 
-/**
- * Created by dengcheng on 2018/5/24.
- */
 @SpringBootApplication
 @EnableBinding
 public class App{

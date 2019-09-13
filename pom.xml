@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>com.lv.cloud</groupId>
-		<artifactId>lvcloud-stream-parent</artifactId>
-		<version>1.0.0-SNAPSHOT</version>
-	</parent>
-
 	<groupId>com.lv.cloud</groupId>
-	<artifactId>lvcloud-stream-binder-activemq-parent</artifactId>
+	<artifactId>lvcloud-stream-parent</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	
 	<properties>
@@ -16,27 +11,30 @@
 		<spring-cloud-stream.version>2.1.2.RELEASE</spring-cloud-stream.version>
 	</properties>
 	<modules>
-		<module>lvcloud-stream-binder-activemq</module>
-		<!--<module>lvcloud-stream-starter-activemq</module>-->
-		<module>lvcloud-stream-binder-activemq-core</module>
-		<!--<module>lvcloud-stream-binder-activemq-streams</module>
-		<module>lvcloud-stream-binder-activemq-docs</module>
-		-->
+		<module>lvcloud-stream-activemq</module>
+		<module>lvcloud-stream-rocketmq</module>
     </modules>
 
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>com.lv.cloud</groupId>
-				<artifactId>lvcloud-stream-binder-activemq-core</artifactId>
-				<version>${project.version}</version>
+				<artifactId>lvcloud-build</artifactId>
+				<version>1.0.0-SNAPSHOT</version>
+				<type>pom</type>
+				<scope>import</scope>
 			</dependency>
 			<dependency>
-				<groupId>com.lv.cloud</groupId>
-				<artifactId>lvcloud-stream-binder-activemq</artifactId>
-				<version>${project.version}</version>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-stream</artifactId>
+				<version>${spring-cloud-stream.version}</version>
 			</dependency>
-
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-stream-binder-test</artifactId>
+				<version>${spring-cloud-stream.version}</version>
+				<scope>test</scope>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -60,5 +58,5 @@
 				</configuration>
 			</plugin>
 		</plugins>
-	</build>
+	</build>∂
 </project>
